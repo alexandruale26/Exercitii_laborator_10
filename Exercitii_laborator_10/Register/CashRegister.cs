@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Text;
 using Exercitii_laborator_10.Interfaces;
+using Exercitii_laborator_10.Extensions;
 
 namespace Exercitii_laborator_10.Register
 {
     class CashRegister : IReceipt
     {
         private readonly Safe safe;
-        public POS POS;
+        public POS POS { get; private set; }
         public double CashRegisterTotal { get; set; }
         public StringBuilder Receipt { get; set; }
 
@@ -71,7 +72,7 @@ namespace Exercitii_laborator_10.Register
             Receipt.AppendLine("Bonul dumneavoastra");
             foreach (var product in basket.products)
             {
-                Receipt.AppendLine(product.ToString());
+                Receipt.AppendLine(product.Description());
             }
         }
 

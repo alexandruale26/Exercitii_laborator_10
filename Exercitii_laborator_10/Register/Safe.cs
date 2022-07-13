@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exercitii_laborator_10.Interfaces;
+using System;
 
 
 namespace Exercitii_laborator_10.Register
@@ -6,6 +7,7 @@ namespace Exercitii_laborator_10.Register
     class Safe
     {
         private double totalCash = 0.0d;
+
 
         public void Open()
         {

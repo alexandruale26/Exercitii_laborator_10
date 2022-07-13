@@ -10,7 +10,7 @@ namespace Exercitii_laborator_10
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             /*
               Casa de marcat
