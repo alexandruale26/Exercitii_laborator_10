@@ -1,5 +1,6 @@
 ﻿using Exercitii_laborator_10.Interfaces;
 using System;
+using System.Text;
 
 namespace Exercitii_laborator_10.Register
 {
@@ -27,7 +28,7 @@ namespace Exercitii_laborator_10.Register
         }
 
 
-        public void PayContactLess(double sumToPay, IContactLessPay contactLess)
+        public void PayContactLess(double sum, IContactLessPay contactLess)
         {
             contactLess.TouchTheSensor();
             contactLess.Pay();
