@@ -5,12 +5,12 @@ namespace Exercitii_laborator_10.Register
 {
     class POS
     {
-        public CashRegister CashRegister { get; private set; }
+        public IEssentials CashRegisterEssentials { get; private set; }
 
 
-        public POS(CashRegister cashRegister)
+        public POS(IEssentials cashRegister)
         {
-            this.CashRegister = cashRegister;
+            this.CashRegisterEssentials = cashRegister;
         }
 
 
@@ -18,10 +18,10 @@ namespace Exercitii_laborator_10.Register
         {
             contactFull.InsertCard();
             contactFull.Pay();
-            CashRegister.CashRegisterTotal += CashRegister.basketTotal;
+            CashRegisterEssentials.CashRegisterTotal += CashRegisterEssentials.BasketTotal;
             contactFull.ExtractCard();
 
-            CashRegister.Receipt.AppendLine($"Plata Card Clasic\nTotal {CashRegister.basketTotal:N2} lei");
+            CashRegisterEssentials.Receipt.AppendLine($"Plata Card Clasic\nTotal {CashRegisterEssentials.BasketTotal:N2} lei");
 
             PrintReceipt();
         }
@@ -31,16 +31,17 @@ namespace Exercitii_laborator_10.Register
         {
             contactLess.TouchTheSensor();
             contactLess.Pay();
-            CashRegister.CashRegisterTotal += CashRegister.basketTotal;
+            CashRegisterEssentials.CashRegisterTotal += CashRegisterEssentials.BasketTotal;
 
-            CashRegister.Receipt.AppendLine($"Plata Contactless\nTotal {CashRegister.basketTotal:N2} lei");
+            CashRegisterEssentials.Receipt.AppendLine($"Plata Contactless\nTotal {CashRegisterEssentials.BasketTotal:N2} lei");
 
             PrintReceipt();
         }
 
         private void PrintReceipt()
         {
-            Console.WriteLine($"\n{CashRegister.Receipt}");
+            Console.WriteLine($"\n{CashRegisterEssentials.Receipt}");
         }
+
     }
 }

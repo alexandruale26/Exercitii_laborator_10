@@ -87,7 +87,7 @@ namespace Exercitii_laborator_10
             cashRegister1.Scan(altexBasket);
             Console.WriteLine("\nVa rugam achitati produsele");
             cashRegister1.PayWithCash(int.Parse(Console.ReadLine()));
-            //cashRegister1.POS.PayContactFull(cashRegister1.basketTotal, new ClassicCard());
+            //cashRegister1.POS.PayContactFull(cashRegister1.BasketTotal, new ClassicCard());
 
 
 
@@ -95,7 +95,7 @@ namespace Exercitii_laborator_10
             cashRegister1.Scan(coraBasket);
             Console.WriteLine("Va rugam achitati produsele");
             //cashRegister1.PayWithCash(double.Parse(Console.ReadLine()));
-            cashRegister1.POS.PayContactLess(cashRegister1.basketTotal, new Smartphone());
+            cashRegister1.POS.PayContactLess(cashRegister1.BasketTotal, new Smartphone());
 
             Console.WriteLine();
         }
